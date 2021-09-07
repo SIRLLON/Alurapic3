@@ -2,6 +2,10 @@
   <form [formGroup]="photoForm" class="row">
     <div class="col-md-6 text-center">
       <input formControlName="file" type="file" accept="image/*">
+      <ap-vmessage
+        text="Please, select a photo"
+        *ngIf="photoForm.get('file').errors?.required">
+      </ap-vmessage>
     </div>
 
     <div class="col-md-6">
