@@ -12,6 +12,7 @@ export class FooterComponent implements OnInit {
     user$: Observable<User>;
     constructor(private userService: UserService) {}
 
+
     ngOnInit(): void {
      this.user$ = this.userService.getUser();
 
