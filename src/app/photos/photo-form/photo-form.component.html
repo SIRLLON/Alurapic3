@@ -14,6 +14,10 @@
           formControlName="description"
           class="form-control form-control-sm"
           placeholder="photo description"></textarea>
+          <ap-vmessage
+            text="Maximun size allowed is 300"
+            *ngIf="photoForm.get('description').errors?.maxlength">
+          </ap-vmessage>
       </div>
 
       <div class="form-group">

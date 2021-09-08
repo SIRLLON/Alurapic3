@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../user/user';
-import { UserService } from "../user/user.service";
+import { UserService } from '../user/user.service';
 
 @Component({
+    // tslint:disable-next-line: component-selector
     selector: 'ap-footer',
     templateUrl: './footer.component.html'
 })
