@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Photo } from './photo';
+import { Photo } from "./photo";
 
 const API = 'http://localhost:3000';
 
@@ -22,13 +22,20 @@ export class PhotoService {
         return this.http
             .get<Photo[]>(API + '/' + userName + '/photos', { params });
     }
+
     upload(description: string, allowComments: boolean, file: File) {
 
-      const formData = new FormData();
-      formData.append('description', description);
-      formData.append('allowComments', allowComments ? 'true' : 'false');
-      formData.append('imageFile', file);
+        const formData = new FormData();
+        formData.append('description', description);
+        formData.append('allowComments', allowComments ? 'true' : 'false');
+        formData.append('imageFile', file);
 
-      return this.http.post(API + '/photos/upload', formData);
-      }
+        return this.http.post(API + '/photos/upload', formData);
+
+    }
+
+    findById(id: string) {
+
+        return this.http.get<Photo>(API + '/photos/' + id);
+    }
 }
